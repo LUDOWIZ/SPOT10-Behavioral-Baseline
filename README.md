@@ -1,7 +1,7 @@
 SPOT10: Behavioral Baseline Tracker 🌈🛣️
 Project Status: Live Pilot (Internal: Op. Rainbow Road)
 
-🚀 The Vision
+🚀 The Vision:
 Som HR-expert är musikkonsumtion inte bara underhållning – det är ett strategiskt verktyg för att optimera kognitiv output. SPOT10 är den tekniska realiseringen av piloten Cognitive Load Management, designad för att extrahera och kvantifiera mentala tillstånd via Spotify Web API.
 
 🧠 Analysmodellen: Insights & BPM-rekommendationer
