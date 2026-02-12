@@ -11,7 +11,7 @@ BPM-mappning: Identifiering av din kognitiva puls genom analys av tempot i din n
 
 Performance Insights: Analys av ljudbilden för att förstå vilka miljöer som faktiskt triggar ditt fokus.
 
-Proaktiva rekommendationer: Systemet föreslår musikaliska justeringar för att antingen höja energin vid svackor eller sänka kognitiv belastning inför djuparbete (t.ex. juridisk analys under BONzz).
+Proaktiva rekommendationer: Systemet föreslår musikaliska justeringar för att antingen höja energin vid svackor eller sänka kognitiv belastning inför djuparbete.
 
 🛠 Kom igång (Technical Setup)
 1. Förberedelser i Spotify Developer Portal
