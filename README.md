@@ -1,68 +1,62 @@
 SPOT10: Behavioral Baseline Tracker 🌈🛣️
 Project Status: Live Pilot (Internal: Op. Rainbow Road)
 
-🚀 The Vision:
-Som HR-expert är musikkonsumtion inte bara underhållning – det är ett strategiskt verktyg för att optimera kognitiv output. SPOT10 är den tekniska realiseringen av piloten Cognitive Load Management, designad för att extrahera och kvantifiera mentala tillstånd via Spotify Web API.
+🚀 The Vision
+As an HR expert, music consumption is more than just entertainment—it’s a strategic tool for optimizing cognitive output. SPOT10 is the technical realization of the Cognitive Load Management pilot, designed to extract and quantify mental states via the Spotify Web API.
 
-🧠 Analysmodellen: Insights & BPM-rekommendationer
-Istället för statiska tillstånd använder SPOT10 dina Top 15 mest spelade låtar för att identifiera mönster och generera rekommendationer för framtida arbete och studier:
+🧠 The Analysis Model: Insights & BPM Recommendations
+Instead of observing static states, SPOT10 utilizes your Top 15 most-played tracks to identify patterns and generate recommendations for future work and study sessions:
 
-BPM-mappning: Identifiering av din kognitiva puls genom analys av tempot i din nuvarande lyssning.
+BPM Mapping: Identifying your "cognitive pulse" by analyzing the tempo of your current listening habits.
 
-Performance Insights: Analys av ljudbilden för att förstå vilka miljöer som faktiskt triggar ditt fokus.
+Performance Insights: Analyzing the soundscape to understand which environments actually trigger your deep focus.
 
-Proaktiva rekommendationer: Systemet föreslår musikaliska justeringar för att antingen höja energin vid svackor eller sänka kognitiv belastning inför djuparbete.
+Proactive Recommendations: The system suggests musical adjustments to either boost energy during slumps or lower cognitive load before deep work.
 
-🛠 Kom igång (Technical Setup)
-1. Förberedelser i Spotify Developer Portal
-Logga in på Spotify Developer Dashboard.
+🛠 Technical Setup
+1. Spotify Developer Portal
+Log in to the Spotify Developer Dashboard.
 
-Skapa en ny app och gå till Settings.
+Create a new app and navigate to Settings.
 
-Konfigurera följande (kritiskt för autentisering):
+Configure the following (critical for authentication):
 
 Website: http://127.0.0.1:8888
 
 Redirect URI: http://127.0.0.1:8888/callback
 
-Klicka på Save.
+Click Save.
 
-2. Installation av Node.js & Miljö (VS Code)
-Om node -v inte ger ett versionsnummer i terminalen, kör följande steg i VS Code-terminalen (Ctrl + ö):
+2. Node.js & Environment (VS Code)
+If node -v does not return a version number in your terminal, run the following steps in the VS Code terminal (Ctrl + ~):
 
-Installera nvm (Node Version Manager):
+Install & Activate nvm (Node Version Manager):
 
 Bash
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
-Aktivera nvm:
-
-Bash
 . "$HOME/.nvm/nvm.sh"
-Installera Node 22 (LTS):
+Install Node 22 (LTS) & Dependencies:
 
 Bash
 nvm install 22
-Installera bibliotek för SPOT10:
-
-Bash
 npm install express axios dotenv
-3. Konfiguration (.env)
-Skapa en fil döpt till .env i projektets rotmapp och klistra in dina nycklar:
+3. Configuration (.env)
+Create a file named .env in the project root folder and paste your credentials:
 
 Kodavsnitt
-SPOTIFY_CLIENT_ID=DITT_CLIENT_ID
-SPOTIFY_CLIENT_SECRET=DITT_CLIENT_SECRET
+SPOTIFY_CLIENT_ID=YOUR_CLIENT_ID
+SPOTIFY_CLIENT_SECRET=YOUR_CLIENT_SECRET
 REDIRECT_URI=http://127.0.0.1:8888/callback
-4. Kör piloten
-Starta servern med:
+4. Run the Pilot
+Start the server:
 
 Bash
 node server.js
-Gå till http://127.0.0.1:8888 i din webbläsare för att logga in och initiera extraktionen.
+Open http://127.0.0.1:8888 in your browser to log in and initiate the extraction.
 
 📈 Future Roadmap: Neuro-HR
-Predictive Burnout Prevention: Detektering av skiftningar i valence över tid som varningssignal.
+Predictive Burnout Prevention: Detecting shifts in musical valence (positivity) over time as an early warning signal.
 
-Flow-State Matching: Optimering av team-sammansättningar baserat på synkroniserade kognitiva rytmer.
+Flow-State Matching: Optimizing team compositions based on synchronized cognitive rhythms.
 
 Developed as a strategic HR-innovation pilot under the internal code name Op. Rainbow Road.
