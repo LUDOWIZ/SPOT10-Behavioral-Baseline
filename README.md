@@ -1,62 +1,71 @@
-SPOT10: Behavioral Baseline Tracker 🌈🛣️
-Project Status: Live Pilot (Internal: Op. Rainbow Road)
+SPOT10: Behavioral Baseline Tracker
 
-🚀 The Vision
-As an HR expert, music consumption is more than just entertainment—it’s a strategic tool for optimizing cognitive output. SPOT10 is the technical realization of the Cognitive Load Management pilot, designed to extract and quantify mental states via the Spotify Web API.
+Project Status: Internal Pilot
 
-🧠 The Analysis Model: Insights & BPM Recommendations
-Instead of observing static states, SPOT10 utilizes your Top 15 most-played tracks to identify patterns and generate recommendations for future work and study sessions:
+Overview
 
-BPM Mapping: Identifying your "cognitive pulse" by analyzing the tempo of your current listening habits.
+SPOT10 is a small analytics project that explores how listening habits can be used to build a baseline profile of user preferences and work environments. By analyzing recently played and frequently played tracks, the system generates simple insights based on audio features available through the streaming platform API.
 
-Performance Insights: Analyzing the soundscape to understand which environments actually trigger your deep focus.
+The goal is not to predict behavior, but to identify patterns that may be useful when organizing study sessions, focus work, or daily routines.
 
-Proactive Recommendations: The system suggests musical adjustments to either boost energy during slumps or lower cognitive load before deep work.
+Analysis
 
-🛠 Technical Setup
-1. Spotify Developer Portal
-Log in to the Spotify Developer Dashboard.
+SPOT10 uses the user's Top 15 most-played tracks and associated audio metadata to generate a listening profile.
 
-Create a new app and navigate to Settings.
+Current metrics include:
 
-Configure the following (critical for authentication):
+* Tempo (BPM) distribution
+* Energy and acousticness levels
+* Danceability and valence trends
+* Artist and genre concentration
+* Listening consistency across the dataset
 
-Website: http://127.0.0.1:8888
+These metrics are combined into a baseline profile that can be compared over time as listening habits change.
 
-Redirect URI: http://127.0.0.1:8888/callback
+Technical Setup
 
-Click Save.
+1. API Configuration
 
-2. Node.js & Environment (VS Code)
-If node -v does not return a version number in your terminal, run the following steps in the VS Code terminal (Ctrl + ~):
+Create an application in the streaming platform developer portal and configure the following settings:
 
-Install & Activate nvm (Node Version Manager):
+Website:
+http://127.0.0.1:8888
 
-Bash
+Redirect URI:
+http://127.0.0.1:8888/callback
+
+2. Node.js Environment
+
+Install Node.js using NVM if required:
+
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
-. "$HOME/.nvm/nvm.sh"
-Install Node 22 (LTS) & Dependencies:
 
-Bash
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+
 nvm install 22
+nvm use 22
+
 npm install express axios dotenv
-3. Configuration (.env)
-Create a file named .env in the project root folder and paste your credentials:
 
-Kodavsnitt
-SPOTIFY_CLIENT_ID=YOUR_CLIENT_ID
-SPOTIFY_CLIENT_SECRET=YOUR_CLIENT_SECRET
+3. Environment Configuration
+
+Create a .env file in the project root:
+
+CLIENT_ID=YOUR_CLIENT_ID
+CLIENT_SECRET=YOUR_CLIENT_SECRET
 REDIRECT_URI=http://127.0.0.1:8888/callback
-4. Run the Pilot
-Start the server:
 
-Bash
+4. Run
+
 node server.js
-Open http://127.0.0.1:8888 in your browser to log in and initiate the extraction.
 
-📈 Future Roadmap: Neuro-HR
-Predictive Burnout Prevention: Detecting shifts in musical valence (positivity) over time as an early warning signal.
+Open http://127.0.0.1:8888 in your browser and complete the authentication flow.
 
-Flow-State Matching: Optimizing team compositions based on synchronized cognitive rhythms.
+Future Work
 
-Developed as a strategic HR-innovation pilot under the internal code name Op. Rainbow Road.
+* Historical trend tracking
+* Expanded audio feature analysis
+* Comparative profile reporting
+* Automated playlist generation
+* Data export and visualization support
